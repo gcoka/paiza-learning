@@ -3,14 +3,10 @@
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTPATH
 
-echo "run in1"
-go run main.go < in1
-echo "output should be:"
-cat out1
+echo "test case 1:"
+colordiff <(go run main.go < in1) out1
 
 echo ""
 
-echo "run in2"
-go run main.go < in2
-echo "output should be:"
-cat out2
+echo "test case 2:"
+colordiff <(go run main.go < in2) out2
